@@ -8,19 +8,15 @@ public class EvenNumbersIterator implements Iterator<Integer> {
     private int[] data;
     private int index;
 
-    private void moveToNextEven() {
-        while (index < data.length && data[index] % 2 != 0) {
-            index++;
-        }
-    }
-
     public EvenNumbersIterator(int[] data) {
         this.data = data;
-        moveToNextEven();
     }
 
     @Override
     public boolean hasNext() {
+        while (index < data.length && data[index] % 2 != 0) {
+            index++;
+        }
         return index < data.length;
     }
 
@@ -31,7 +27,6 @@ public class EvenNumbersIterator implements Iterator<Integer> {
         }
         int result = data[index];
         index++;
-        moveToNextEven();
         return result;
     }
 
