@@ -26,8 +26,6 @@ public class NonNullIterator implements Iterator<Integer> {
         if (!hasNext()) {
             throw new NoSuchElementException();
         }
-        Integer result = data[index];
-        index++;
-        return result;
+        return data[index++];
     }
 }
