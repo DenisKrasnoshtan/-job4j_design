@@ -38,11 +38,11 @@ public class ForwardLinked<T> implements Iterable<T> {
         if (head == null) {
             throw new NoSuchElementException();
         }
-        T result = head.item; // Сохраняем значение первого элемента.
-        head = head.next; // Перемещаем head на следующий элемент.
-        size--; // Уменьшаем размер списка.
-        modCount++; // Фиксируем модификацию списка.
-        return result; // Возвращаем удалённый элемент.
+        T result = head.item;
+        head = head.next;
+        size--;
+        modCount++;
+        return result;
     }
 
     @Override
